@@ -18,6 +18,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.itla.appblog.api.ManejadorSesion;
 import com.itla.appblog.api.ServicioApi;
+import com.itla.appblog.api.ServicioWebSocket;
 import com.itla.appblog.api.adapter.PostAdapter;
 import com.itla.appblog.api.interfaces.PostInterface;
 import com.itla.appblog.api.interfaces.SecurityInterface;
@@ -97,6 +98,7 @@ public class ListaPost extends AppCompatActivity {
         });
 
         cargarPosts();
+        new ServicioWebSocket(this);
     }
 
     private void cargarPosts() {
@@ -115,6 +117,9 @@ public class ListaPost extends AppCompatActivity {
                 });
                 mAdapter = new PostAdapter(postArrayList);
                 recyclerView.setAdapter(mAdapter);
+
+                ServicioWebSocket.postArrayList=postArrayList;
+                ServicioWebSocket.adapter=mAdapter;
             }
 
             @Override
@@ -151,6 +156,6 @@ public class ListaPost extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        cargarPosts();
+        //cargarPosts();
     }
 }

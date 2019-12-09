@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.itla.appblog.api.ManejadorSesion;
 import com.itla.appblog.api.ServicioApi;
+import com.itla.appblog.api.ServicioWebSocket;
 import com.itla.appblog.api.adapter.ComentarioAdapter;
 import com.itla.appblog.api.interfaces.PostInterface;
 import com.itla.appblog.api.modelos.Comment;
@@ -59,6 +60,7 @@ public class ComentariosActivity extends AppCompatActivity {
             }
         });
         getPost();
+        new ServicioWebSocket(this);
     }
 
 
@@ -92,6 +94,9 @@ public class ComentariosActivity extends AppCompatActivity {
                 commentArrayList.addAll(response.body());
                 mAdapter = new ComentarioAdapter(commentArrayList);
                 recyclerView.setAdapter(mAdapter);
+
+                ServicioWebSocket.commentsArrayList=commentArrayList;
+                ServicioWebSocket.adapter=mAdapter;
             }
 
             @Override
@@ -110,7 +115,7 @@ public class ComentariosActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Comment> call, Response<Comment> response) {
                 if(response.code()== 201){
-                    getComments();
+                    //getComments();
                     etComment.setText("");
                 }
             }

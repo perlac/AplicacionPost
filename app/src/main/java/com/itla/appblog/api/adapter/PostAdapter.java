@@ -99,12 +99,8 @@ public class PostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                         if (response.code() == 200)
                             if (itemLista.isLiked()) {
                                 ibLike.setImageResource(R.drawable.like2);
-                                itemLista.setLiked(false);
-                                itemLista.setLikes(itemLista.getLikes() - 1);
                             } else {
                                 ibLike.setImageResource(R.drawable.like);
-                                itemLista.setLiked(true);
-                                itemLista.setLikes(itemLista.getLikes() + 1);
                             }
                         notifyItemChanged(position);
                     }

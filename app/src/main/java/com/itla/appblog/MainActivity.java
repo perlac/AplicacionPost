@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         if (!manejadorSesion.getSesion("tkn").isEmpty()) {
             manejadorSesion.setUserID(Integer.parseInt(manejadorSesion.getSesion("usr")));
             manejadorSesion.setToken(manejadorSesion.getSesion("tkn"));
+            ManejadorSesion.setToken_normal(manejadorSesion.getSesion("tkn").replace("Bearer ", ""));
             Intent intento = new Intent(getApplicationContext(), ListaPost.class);
             startActivity(intento);
             finish();

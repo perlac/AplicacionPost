@@ -1,8 +1,8 @@
-package com.itla.appblog.database.interfaces;
+package com.itla.appblog.api.interfaces;
 
 
 
-import com.itla.appblog.database.modelos.User;
+import com.itla.appblog.api.modelos.User;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;

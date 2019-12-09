@@ -6,38 +6,78 @@
     android:layout_height="match_parent"
     tools:context=".PostActivity">
 
-    <EditText
-        android:id="@+id/etpost"
-        android:layout_width="345dp"
-        android:layout_height="121dp"
-        android:layout_marginTop="184dp"
-        android:ems="10"
-        android:hint="Cuerpo"
-        android:inputType="textPersonName"
+    <FrameLayout
+        android:id="@+id/frameLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/primaryDarkColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvtitulo_crear_post"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/crear_publicacion"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/etpost"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:gravity="clip_horizontal"
+        android:hint="@string/cuerpo"
+        android:inputType="textMultiLine|text"
+        android:maxLines="15"
+        android:minLines="10"
+        app:layout_constraintEnd_toEndOf="@+id/ettitulo"
+        app:layout_constraintStart_toStartOf="@+id/ettitulo"
+        app:layout_constraintTop_toBottomOf="@+id/ettitulo" />
 
     <Button
         android:id="@+id/btguardarpost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="16dp"
-        android:text="Publicar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etpost" />
+        android:layout_marginTop="16dp"
+        android:background="@drawable/myborder3"
+        android:text="@string/publicar"
+        app:layout_constraintEnd_toEndOf="@+id/ettags_post"
+        app:layout_constraintTop_toBottomOf="@+id/ettags_post" />
 
     <EditText
         android:id="@+id/ettitulo"
-        android:layout_width="336dp"
-        android:layout_height="47dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
-        android:hint="Titulo"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/etpost"
+        android:hint="@string/titulo"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout3" />
+
+
+    <com.hootsuite.nachos.NachoTextView
+        android:id="@+id/ettags_post"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/tags"
+        android:inputType="textMultiLine|text"
+        android:maxLines="3"
+        app:layout_constraintEnd_toEndOf="@+id/etpost"
+        app:layout_constraintStart_toStartOf="@+id/etpost"
+        app:layout_constraintTop_toBottomOf="@+id/etpost" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

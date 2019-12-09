@@ -1,4 +1,4 @@
-package com.itla.appblog.database.modelos;
+package com.itla.appblog.api.modelos;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

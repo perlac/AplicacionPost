@@ -1,8 +1,8 @@
-package com.itla.appblog.database.interfaces;
+package com.itla.appblog.api.interfaces;
 
 
-import com.itla.appblog.database.modelos.Comment;
-import com.itla.appblog.database.modelos.Post;
+import com.itla.appblog.api.modelos.Comment;
+import com.itla.appblog.api.modelos.Post;
 
 import java.util.List;
 
@@ -14,6 +14,7 @@ import retrofit2.http.Header;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface PostInterface {
 
@@ -33,9 +34,11 @@ public interface PostInterface {
     Call<Comment> guardarComentario(@Header("Authorization") String auth, @Path("id") int id, @Body Comment comment);
 
     @PUT("post/{id}/like")
-    Call darLike(@Header("Authorization") String auth);
+    Call<Void>darLike(@Header("Authorization") String auth,@Path("id") int postId);
 
     @DELETE("post/{id}/like")
-    Call quitarLike(@Header("Authorization") String auth);
+    Call <Void>quitarLike(@Header("Authorization") String auth,@Path("id") int postId);
 
+    @GET("post")
+    Call<List<Post>> buscarPostPorUsuario(@Header("Authorization") String auth,@Query(value="userId", encoded=true) int userId);
 }

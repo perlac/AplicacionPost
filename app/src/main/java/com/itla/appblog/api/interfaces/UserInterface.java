@@ -1,6 +1,6 @@
-package com.itla.appblog.database.interfaces;
+package com.itla.appblog.api.interfaces;
 
-import com.itla.appblog.database.modelos.User;
+import com.itla.appblog.api.modelos.User;
 
 import java.util.List;
 import retrofit2.Call;
@@ -14,7 +14,7 @@ public interface UserInterface {
     Call<List<User>> buscarUsuarios(@Header("Authorization") String auth);
 
     @GET("users/{id}")
-    Call<User> buscarUsuarioId(@Path("id") int id, @Header("Authorization") String auth);
+    Call<User> buscarUsuarioId(@Header("Authorization") String auth,@Path("id") int id);
 
     @GET("/users/me")
     Call<User> buscarMiInformacion(@Header("Authorization") String auth);

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/myborder"
+    android:paddingBottom="4dp">
+
+    <FrameLayout
+        android:id="@+id/frameLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/myborder2"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvtitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="fill"
+            android:maxLines="2"
+            android:paddingStart="8dp"
+            android:text="TextView"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="18sp" />
+    </FrameLayout>
+
+    <ImageButton
+        android:id="@+id/iblike"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider"
+        app:srcCompat="@drawable/like" />
+
+    <TextView
+        android:id="@+id/tvcantlike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/iblike"
+        app:layout_constraintEnd_toStartOf="@+id/iblike"
+        app:layout_constraintTop_toTopOf="@+id/iblike" />
+
+    <ImageButton
+        android:id="@+id/ibvisto"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@null"
+        app:layout_constraintEnd_toStartOf="@+id/tvcant_comentarios_post"
+        app:layout_constraintTop_toBottomOf="@+id/divider"
+        app:srcCompat="@drawable/view2" />
+
+    <TextView
+        android:id="@+id/tvcantvista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/ibvisto"
+        app:layout_constraintEnd_toStartOf="@+id/ibvisto"
+        app:layout_constraintTop_toTopOf="@+id/ibvisto" />
+
+    <ImageButton
+        android:id="@+id/ibnomusuario"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        android:background="@null"
+        android:tint="@color/primaryColor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout4"
+        app:srcCompat="@drawable/account" />
+
+    <TextView
+        android:id="@+id/tvnomusuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/ibnomusuario"
+        app:layout_constraintTop_toTopOf="@+id/ibnomusuario" />
+
+    <TextView
+        android:id="@+id/tvcuerpo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:maxLines="10"
+        android:minLines="5"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/ibnomusuario"
+        app:layout_constraintTop_toBottomOf="@+id/tvemail_usuario_post" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="4dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintTop_toBottomOf="@+id/tvfecha_post"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/tvemail_usuario_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/ibnomusuario"
+        app:layout_constraintTop_toBottomOf="@+id/tvnomusuario" />
+
+    <TextView
+        android:id="@+id/tvfecha_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/tvcuerpo"
+        app:layout_constraintTop_toBottomOf="@+id/tvcuerpo" />
+
+    <ImageButton
+        android:id="@+id/ibcomentarios"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background='@null'
+        android:tint="@color/primaryColor"
+        app:layout_constraintEnd_toStartOf="@+id/tvcantlike"
+        app:layout_constraintTop_toBottomOf="@+id/divider"
+        app:srcCompat="@drawable/ic_comentario" />
+
+    <TextView
+        android:id="@+id/tvcant_comentarios_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/ibcomentarios"
+        app:layout_constraintEnd_toStartOf="@+id/ibcomentarios"
+        app:layout_constraintTop_toTopOf="@+id/ibcomentarios" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
